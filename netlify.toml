@@ -1,0 +1,7 @@
+[build]
+  command = "npm run build"
+  publish = "KIngdom centerd man - Copy"
+
+[functions]
+  directory = "KIngdom centerd man - Copy/netlify/functions"
+  node_bundler = "esbuild"
