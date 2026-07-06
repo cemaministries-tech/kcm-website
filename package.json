@@ -1,0 +1,11 @@
+{
+  "name": "kcm-website",
+  "private": true,
+  "scripts": {
+    "build": "echo 'Static site: no build step required'"
+  },
+  "dependencies": {
+    "@netlify/blobs": "^9.1.2"
+  },
+  "devDependencies": {}
+}
