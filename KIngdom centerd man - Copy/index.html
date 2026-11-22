@@ -4,6 +4,11 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>KCM — Kingdom Centered Men</title>
+<meta name="description" content="Free video lessons, real talk, and The Blueprint newsletter for men done drifting. Biblical discipline, purity, purpose, and brotherhood from Pastor Jayden Doddridge." />
+<meta name="theme-color" content="#000000" />
+<meta property="og:title" content="KCM — Kingdom Centered Men" />
+<meta property="og:description" content="You already know something's missing. Free lessons and a newsletter for men ready to build." />
+<meta property="og:type" content="website" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800;900&family=Inter+Tight:wght@700;800;900&display=swap" rel="stylesheet" />
@@ -18,8 +23,8 @@
   --charcoal:#222222;
   --sky:     #00A6FF;
   --white:   #FFFFFF;
-  --gray:    #94a3b8;
-  --dim:     #475569;
+  --gray:    #b6c2d3;
+  --dim:     #94a3b8;
   --surface: rgba(15,23,42,0.75);
   --border:  rgba(255,255,255,0.07);
 }
@@ -38,6 +43,11 @@ body {
   overflow-x: hidden;
   letter-spacing: -0.01em;
 }
+
+a:focus-visible, button:focus-visible, .struggle-card:focus-visible {
+  outline: 2px solid var(--sky); outline-offset: 3px;
+}
+.submit-btn, .nl-glow-btn { display: inline-block; text-decoration: none; }
 
 /* ─────────────────────────────────────────
    NAV — floating pill bar like Sandcastles
@@ -119,8 +129,12 @@ nav {
 }
 .nav-cta:hover { background: var(--sky); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(0,64,255,0.4); }
 @media(max-width:700px){
-  .nav-links { display: none; }
   .nav-wrap { width: calc(100% - 24px); top: 12px; }
+  .nav-brand, .nav-cta { display: none; }
+  nav { gap: 8px; }
+  .nav-links { overflow-x: auto; scrollbar-width: none; flex: 1; }
+  .nav-links::-webkit-scrollbar { display: none; }
+  .nav-links a { white-space: nowrap; padding: 6px 9px; }
 }
 
 /* ─────────────────────────────────────────
@@ -455,6 +469,7 @@ nav {
   background: radial-gradient(circle, rgba(0,64,255,0.35), transparent 70%);
   filter: blur(40px);
 }
+.founder-grid:has(.founder-img-wrap[style*="none"]) { grid-template-columns: 1fr; }
 .founder-img-wrap img {
   position: relative; width: 100%; max-width: 340px;
   border-radius: 24px;
@@ -639,7 +654,7 @@ footer {
   border-top: 1px solid rgba(255,255,255,0.05);
   background: transparent;
 }
-footer p { font-size: 12px; color: #334155; }
+footer p { font-size: 12px; color: #64748b; }
 footer span { color: var(--blue); font-weight: 700; }
 
 /* ─────────────────────────────────────────
@@ -685,18 +700,19 @@ footer span { color: var(--blue); font-weight: 700; }
   <nav>
     <div class="nav-left">
       <!-- Replace src with your actual logo path -->
-      <img src="ChatGPT_Image_Jun_1__2026__03_17_25_PM.png" alt="KCM Shield Logo" class="nav-logo-img" />
+      <img src="ChatGPT_Image_Jun_1__2026__03_17_25_PM.png" alt="KCM Shield Logo" class="nav-logo-img" width="36" height="36" onerror="this.style.display='none'" />
       <span class="nav-brand">KCM <span>·</span></span>
     </div>
     <ul class="nav-links">
       <li><a href="#struggles">Find Your Battle</a></li>
       <li><a href="#what-you-get">What's Inside</a></li>
+      <li><a href="#mackedon">The Standard</a></li>
       <li><a href="#founder">The Founder</a></li>
       <li><a href="#blueprint">The Blueprint</a></li>
       <li><a href="kcm-ai.html" style="color:var(--sky);border:1px solid rgba(0,166,255,0.25);border-radius:8px;padding:6px 12px;background:rgba(0,166,255,0.06);">⚔️ KCM AI</a></li>
     </ul>
     <div class="nav-right">
-      <button class="sound-toggle" id="soundToggle" title="Toggle sound effects">🔇</button>
+      <button class="sound-toggle" id="soundToggle" title="Toggle sound effects" aria-label="Toggle sound effects" aria-pressed="false">🔇</button>
       <a href="#newsletter" class="nav-cta">Get The Blueprint →</a>
     </div>
   </nav>
@@ -849,57 +865,13 @@ footer span { color: var(--blue); font-weight: 700; }
 
 <div class="divider"></div>
 
-<!-- ── VALUE GRID ── -->
-<section class="section" id="value-grid">
-  <div class="section-inner-narrow">
-    <div class="reveal-on-scroll">
-      <p class="section-eyebrow">What You Get</p>
-      <h2 class="section-title">The raw truth, straight up.</h2>
-    </div>
-    <div class="value-grid">
-      <div class="value-card reveal-on-scroll">
-        <div class="value-icon">✦</div>
-        <h3>Biblical Depth</h3>
-        <p>Scripture that actually applies to where you are right now. Not surface level.</p>
-      </div>
-      <div class="value-card reveal-on-scroll">
-        <div class="value-icon">◈</div>
-        <h3>Real Accountability</h3>
-        <p>No coddling. Direct challenges that make you look in the mirror.</p>
-      </div>
-      <div class="value-card reveal-on-scroll">
-        <div class="value-icon">◆</div>
-        <h3>Practical Tools</h3>
-        <p>Discipline frameworks, purity strategies, purpose-building habits — that actually work.</p>
-      </div>
-      <div class="value-card reveal-on-scroll">
-        <div class="value-icon">◉</div>
-        <h3>Brotherhood</h3>
-        <p>Content shaped by real men doing the real work of becoming Kingdom Centered.</p>
-      </div>
-      <div class="value-card reveal-on-scroll">
-        <div class="value-icon">⬡</div>
-        <h3>Psychology</h3>
-        <p>Understanding how your mind works — so you can stop sabotaging yourself.</p>
-      </div>
-      <div class="value-card reveal-on-scroll">
-        <div class="value-icon">◬</div>
-        <h3>Philosophy</h3>
-        <p>Ancient wisdom. Kingdom lens. Questions that sharpen who you are and why you're here.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
 <!-- ── FOUNDER ── -->
 <section class="section" id="founder">
   <div class="section-inner">
     <div class="founder-grid reveal-on-scroll">
       <div class="founder-img-wrap">
         <!-- Replace with your actual founder photo path -->
-        <img src="founder.jpg.jpg" alt="Jayden Doddridge — Founder of KCM" />
+        <img src="founder.jpg.jpg" alt="Jayden Doddridge — Founder of KCM" loading="lazy" onerror="this.closest('.founder-img-wrap').style.display='none'" />
       </div>
       <div>
         <p class="section-eyebrow">The Founder</p>
@@ -954,7 +926,7 @@ footer span { color: var(--blue); font-weight: 700; }
     </div>
   </div>
   <div class="nl-free-badge">✓ 100% Free — No Credit Card. Ever.</div><br>
-  <a href="https://theblueprint-newsletter-b5b9df.beehiiv.com" target="_blank" class="nl-glow-btn">
+  <a href="https://theblueprint-newsletter-b5b9df.beehiiv.com" target="_blank" rel="noopener" class="nl-glow-btn">
     I want to learn all of this <span class="arrow">→</span>
   </a>
   <div class="nl-sub-note">Join free. Unsubscribe anytime. Kingdom only.</div>
@@ -972,13 +944,14 @@ footer span { color: var(--blue); font-weight: 700; }
       <iframe
         src="https://embeds.beehiiv.com/a2da22b7-cee5-44aa-b2b9-a68b45ab55d7?slim=true"
         data-test-id="beehiiv-embed"
+        loading="lazy"
         height="52"
         frameborder="0"
         scrolling="no"
         style="width:100%;max-width:480px;overflow:hidden;border-radius:8px;display:block;margin:0 auto;"
         title="KCM Newsletter Signup"
       ></iframe>
-      <p style="margin-top:1rem;font-size:0.82rem;color:rgba(255,255,255,0.35);">Having trouble? <a href="https://theblueprint-newsletter-b5b9df.beehiiv.com" target="_blank" style="color:var(--sky);text-decoration:none;">Click here to sign up directly →</a></p>
+      <p style="margin-top:1rem;font-size:0.82rem;color:rgba(255,255,255,0.35);">Having trouble? <a href="https://theblueprint-newsletter-b5b9df.beehiiv.com" target="_blank" rel="noopener" style="color:var(--sky);text-decoration:none;">Click here to sign up directly →</a></p>
     </div>
     <p class="newsletter-promise">Free forever · <span>No spam</span> · Unsubscribe anytime</p>
   </div>
@@ -990,9 +963,7 @@ footer span { color: var(--blue); font-weight: 700; }
 <section class="cta-section">
   <h2>The Blueprint<br>starts here.</h2>
   <p>Free. Powerful. Built for men who are done drifting and ready to build.</p>
-  <a href="https://theblueprint-newsletter-b5b9df.beehiiv.com" target="_blank">
-    <button class="submit-btn">I'm in. →</button>
-  </a>
+  <a href="#newsletter" class="submit-btn">I'm in. →</a>
 </section>
 
 <!-- ── FOOTER ── -->
@@ -1062,12 +1033,14 @@ const revealPills = document.getElementById('revealPills');
 struggles.forEach(s => {
   const card = document.createElement('div');
   card.className = 'struggle-card';
+  card.tabIndex = 0; card.setAttribute('role','button'); card.setAttribute('aria-expanded','false');
   card.innerHTML = `<div class="struggle-icon">${s.icon}</div><div class="struggle-label">${s.label}</div><div class="struggle-sub">${s.sub}</div>`;
   card.addEventListener('click', () => {
-    document.querySelectorAll('.struggle-card').forEach(c => c.classList.remove('active'));
-    card.classList.add('active');
+    document.querySelectorAll('.struggle-card').forEach(c => { c.classList.remove('active'); c.setAttribute('aria-expanded','false'); });
+    card.classList.add('active'); card.setAttribute('aria-expanded','true');
     revealTitle.textContent = s.title;
     revealBody.textContent  = s.body;
+    reveal.setAttribute('aria-live','polite');
     revealPills.innerHTML   = s.pills.map(p => `<span class="reveal-pill">${p}</span>`).join('');
     reveal.classList.remove('visible');
     void reveal.offsetWidth;
@@ -1075,6 +1048,7 @@ struggles.forEach(s => {
     playClick();
     setTimeout(() => reveal.scrollIntoView({ behavior:'smooth', block:'nearest' }), 100);
   });
+  card.addEventListener('keydown', e => { if (e.key==='Enter' || e.key===' ') { e.preventDefault(); card.click(); } });
   card.addEventListener('mouseenter', playHover);
   grid.appendChild(card);
 });
@@ -1094,6 +1068,7 @@ toggleBtn.addEventListener('click', () => {
   soundEnabled = !soundEnabled;
   toggleBtn.textContent = soundEnabled ? '🔊' : '🔇';
   toggleBtn.classList.toggle('active', soundEnabled);
+  toggleBtn.setAttribute('aria-pressed', soundEnabled);
   if (soundEnabled) { getCtx(); playClick(); }
 });
 
