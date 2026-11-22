@@ -691,6 +691,19 @@ footer span { color: var(--blue); font-weight: 700; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+.feature-body, .nl-card p { display: none; }
+.features-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.9rem; margin-top: 2rem; }
+.feature-card { padding: 1.25rem; }
+.feature-num { font-size: 2rem; margin-bottom: 0.4rem; }
+.feature-title { margin-bottom: 0; font-size: 1.05rem; }
+.nl-card { padding: 20px 18px; }
+.nl-card h3 { margin-bottom: 0; font-size: 15px; }
+.nl-grid { margin-bottom: 36px; }
+#blueprint > p { margin-bottom: 36px; }
+.section { padding: 4.5rem 1.5rem; }
+.hero-sub { font-size: clamp(1.15rem, 3vw, 1.5rem); color: var(--gray); }
+.hero h1 { font-size: clamp(3rem, 10vw, 6.8rem); }
+.mackedon-block { margin-top: 1.5rem; }
 </style>
 </head>
 <body>
@@ -700,7 +713,7 @@ footer span { color: var(--blue); font-weight: 700; }
   <nav>
     <div class="nav-left">
       <!-- Replace src with your actual logo path -->
-      <img src="ChatGPT_Image_Jun_1__2026__03_17_25_PM.png" alt="KCM IMG" class="nav-logo-img" width="36" height="36" onerror="this.style.display='none'" />
+      <img src="ChatGPT_Image_Jun_1__2026__03_17_25_PM.png" alt="KCM Shield Logo" class="nav-logo-img" width="36" height="36" onerror="this.style.display='none'" />
       <span class="nav-brand">KCM <span>·</span></span>
     </div>
     <ul class="nav-links">
@@ -724,26 +737,16 @@ footer span { color: var(--blue); font-weight: 700; }
   <p class="hero-eyebrow">Kingdom Centered Men</p>
   <h1>You already know something's <span class="accent">missing.</span></h1>
   <p class="hero-sub">
-    Everyone failed you. <strong>God didn't.</strong><br>
-    KCM exists to close the gap — free video lessons, real talk, and a newsletter built for men who are done drifting.
+    Everyone failed you. <strong>God didn't.</strong>
   </p>
   <div class="hero-cta-row">
     <a href="#newsletter" class="btn-primary">Get Free Access</a>
     <a href="#struggles" class="btn-ghost">Find Your Battle</a>
   </div>
   <div class="hero-proof">
-    <div class="proof-stat">
-      <div class="proof-num">100%</div>
-      <div class="proof-label">Free Content</div>
-    </div>
-    <div class="proof-stat">
-      <div class="proof-num">On Demand</div>
-      <div class="proof-label">Video Lessons</div>
-    </div>
-    <div class="proof-stat">
-      <div class="proof-num">Real</div>
-      <div class="proof-label">No Church Fluff</div>
-    </div>
+    <div class="proof-stat"><div class="proof-num">100% Free</div></div>
+    <div class="proof-stat"><div class="proof-num">No Fluff</div></div>
+    <div class="proof-stat"><div class="proof-num">Real Talk</div></div>
   </div>
   <div class="scroll-indicator">
     <span>Scroll</span>
@@ -762,19 +765,18 @@ footer span { color: var(--blue); font-weight: 700; }
   <div class="section-inner">
     <div class="struggle-intro reveal-on-scroll">
       <div>
-        <p class="section-eyebrow">What are you fighting?</p>
-        <h2 class="section-title">Every man has a battle. Most fight it alone.</h2>
+        <p class="section-eyebrow">Pick your battle</p>
+        <h2 class="section-title">What are you fighting?</h2>
       </div>
-      <p class="section-body" style="padding-top:0.5rem;">
-        Tap what you're dealing with. We'll show you exactly what KCM has for it — no vague Bible verses, no Sunday-morning performance. Just answers.
-      </p>
+      <p class="section-body" style="padding-top:0.5rem;">Tap yours.</p>
     </div>
     <div class="struggle-grid" id="struggleGrid"></div>
     <div class="struggle-reveal" id="struggleReveal">
       <div class="reveal-tag">KCM Covers This</div>
       <h3 class="reveal-title" id="revealTitle"></h3>
-      <p class="reveal-body" id="revealBody"></p>
+      <p class="reveal-body" id="revealBody" hidden></p>
       <div id="revealPills"></div>
+      <a href="#newsletter" class="btn-primary" style="display:inline-block;margin-top:1.25rem;padding:0.7rem 1.6rem;font-size:0.9rem;">Get the lesson free →</a>
     </div>
   </div>
 </section>
@@ -784,8 +786,7 @@ footer span { color: var(--blue); font-weight: 700; }
   <div class="section-inner">
     <div class="reveal-on-scroll">
       <p class="section-eyebrow">What's inside</p>
-      <h2 class="section-title">Premium content. Zero cost. No excuses left.</h2>
-      <p class="section-body" style="max-width:560px;">Every lesson, every video, every resource — free. The only price is showing up.</p>
+      <h2 class="section-title">Premium content. Zero cost.</h2>
     </div>
     <div class="features-grid">
       <div class="feature-card reveal-on-scroll">
@@ -829,13 +830,12 @@ footer span { color: var(--blue); font-weight: 700; }
   <div class="section-inner-narrow reveal-on-scroll">
     <p class="section-eyebrow">The Problem</p>
     <h2 class="section-title">Most men are living someone else's life.</h2>
-    <p class="section-body" style="margin-top:1.2rem;">They wake up, scroll, drift through the day, and wonder why nothing feels like it's going anywhere. They've swapped discipline for comfort and called it freedom.</p>
-    <p class="section-body">YOLO became a license to sleepwalk. But you only live once — which means you can't afford to waste it.</p>
+    
     <div class="pullquote">
       <p>"You live life once — what are you going to do about it?"</p>
       <cite>— Jayden Doddridge, The Project</cite>
     </div>
-    <p class="section-body">The Blueprint isn't motivation. It's not another feel-good devotional. It's the nitty-gritty of self-improvement with God — practical, direct, and built for men who are serious about becoming who they were called to be.</p>
+    <p class="section-body" style="text-align:center;">Not motivation. <strong style="color:#fff">Work.</strong></p>
   </div>
 </section>
 
@@ -847,7 +847,7 @@ footer span { color: var(--blue); font-weight: 700; }
     <div class="reveal-on-scroll">
       <p class="section-eyebrow">The Standard</p>
       <h2 class="section-title">What a Kingdom Centered Man looks like.</h2>
-      <p class="section-body">MACKEDON is the picture-perfect man we strive to be — under God.</p>
+      <p class="section-body">Eight letters. One standard.</p>
     </div>
     <div class="mackedon-block reveal-on-scroll">
       <div class="mackedon-label">The MACKEDON Standard</div>
@@ -878,8 +878,7 @@ footer span { color: var(--blue); font-weight: 700; }
         <h2 class="section-title">Building men, not followers.</h2>
         <p class="founder-name">Jayden Doddridge</p>
         <p class="founder-role">Pastor · Content Creator · Founder, KCM</p>
-        <p class="founder-body">This isn't a faceless brand. It's a mission to help young men stop drifting and start pursuing God, discipline, purpose, and brotherhood.</p>
-        <p class="founder-body">The goal is simple: create content that challenges men to become who they were created to be. No committee. No corporate. Just a pastor from Alabama who's done watching men settle.</p>
+        <p class="founder-body">A pastor from Alabama who's done watching men settle.</p>
         <a href="#newsletter" class="btn-primary" style="display:inline-block;margin-top:1.75rem;">Join the mission free →</a>
       </div>
     </div>
@@ -892,7 +891,7 @@ footer span { color: var(--blue); font-weight: 700; }
 <section id="blueprint">
   <div class="nl-tag"><span class="dot"></span> The Blueprint Newsletter</div>
   <h2>Premium knowledge.<br><span class="glow">Free forever.</span></h2>
-  <p>This isn't your average devotional. The Blueprint is a deep dive built for men who want to grow — spiritually, mentally, and practically.</p>
+  <p>Our free newsletter.</p>
   <div class="nl-grid">
     <div class="nl-card reveal-on-scroll">
       <span class="nl-card-icon">✦</span>
@@ -938,8 +937,8 @@ footer span { color: var(--blue); font-weight: 700; }
 <section class="section" id="newsletter">
   <div class="newsletter-inner reveal-on-scroll">
     <p class="section-eyebrow">Join the Kingdom</p>
-    <h2 class="section-title">30 seconds. Your inbox. Your life — changed.</h2>
-    <p class="section-body">Drop your email below. No spam, no Sunday-morning guilt trip. Just content that challenges you to become the man God built you to be.</p>
+    <h2 class="section-title">Ready to build?</h2>
+    <p class="section-body">Drop your email. No spam.</p>
     <div class="beehiiv-wrapper">
       <iframe
         src="https://embeds.beehiiv.com/a2da22b7-cee5-44aa-b2b9-a68b45ab55d7?slim=true"
@@ -962,7 +961,7 @@ footer span { color: var(--blue); font-weight: 700; }
 <!-- ── FINAL CTA ── -->
 <section class="cta-section">
   <h2>The Blueprint<br>starts here.</h2>
-  <p>Free. Powerful. Built for men who are done drifting and ready to build.</p>
+  <p>Free. Built for men done drifting.</p>
   <a href="#newsletter" class="submit-btn">I'm in. →</a>
 </section>
 
@@ -1039,8 +1038,7 @@ struggles.forEach(s => {
     document.querySelectorAll('.struggle-card').forEach(c => { c.classList.remove('active'); c.setAttribute('aria-expanded','false'); });
     card.classList.add('active'); card.setAttribute('aria-expanded','true');
     revealTitle.textContent = s.title;
-    revealBody.textContent  = s.body;
-    reveal.setAttribute('aria-live','polite');
+        reveal.setAttribute('aria-live','polite');
     revealPills.innerHTML   = s.pills.map(p => `<span class="reveal-pill">${p}</span>`).join('');
     reveal.classList.remove('visible');
     void reveal.offsetWidth;
@@ -1131,3 +1129,4 @@ document.querySelectorAll('.nl-glow-btn').forEach(el => {
 </script>
 </body>
 </html>
+
